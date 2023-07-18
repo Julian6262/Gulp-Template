@@ -100,6 +100,7 @@ function watching() {
     watch(['app/scss/**/*.scss'], styles);
     watch(['app/img/src/*.*'], images);
     watch(['app/components/*.*', 'app/pages/*.*'], pages);
+    watch(['app/*.html']).on('change', browserSync.reload);
     watch(['app/js/**/*.js', '!app/js/**/main.min.js'], scripts);
 }
 
