@@ -99,8 +99,8 @@ function watching() {
     });
     watch(['app/scss/**/*.scss'], styles);
     watch(['app/img/src/*.*'], images);
-    watch(['app/components/*.*', 'app/pages/*.*'], pages);
-    watch(['app/*.html']).on('change', browserSync.reload);
+    // watch(['app/components/*.*', 'app/pages/*.*'], pages);         //несколько страниц
+    watch(['app/*.html']).on('change', browserSync.reload);        //одна страниц
     watch(['app/js/**/*.js', '!app/js/**/main.min.js'], scripts);
 }
 
