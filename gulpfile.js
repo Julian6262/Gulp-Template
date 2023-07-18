@@ -16,12 +16,14 @@ const include = require('gulp-include');
 
 function styles() {
     return src([
+        'node_modules/normalize.css/normalize.css',
         // 'node_modules/magnific-popup/dist/magnific-popup.css',
         // 'node_modules/swiper/swiper-bundle.css',
+        'app/scss/fonts.scss',
         'app/scss/style.scss',
         'app/scss/media.scss'
     ])
-        .pipe(scss({outputStyle: 'expanded'}))
+        .pipe(scss({outputStyle: 'compressed'}))
         .pipe(autoprefixer({
             overrideBrowserslist: ['last 10 versions'],
             grid: true
@@ -99,6 +101,7 @@ function watching() {
     });
     watch(['app/scss/**/*.scss'], styles);
     watch(['app/img/src/*.*'], images);
+    watch(['app/img/fonts/*.*'], fonts);
     // watch(['app/components/*.*', 'app/pages/*.*'], pages);         //несколько страниц
     watch(['app/*.html']).on('change', browserSync.reload);        //одна страниц
     watch(['app/js/**/*.js', '!app/js/**/main.min.js'], scripts);

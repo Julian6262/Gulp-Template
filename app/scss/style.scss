@@ -1,7 +1,11 @@
-* {
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
 body {
@@ -9,12 +13,13 @@ body {
     font-weight: 400;
     font-size: 14px;
     line-height: 18px;
+    color: black;
 }
 
 a {
     text-decoration: none;
     display: inline-block;
-    color: black;
+    color: inherit;
 }
 
 li {
@@ -22,7 +27,7 @@ li {
 }
 
 .container {
-    max-width: 1326px;  //увеличить на 30px
+    max-width: 1326px; //увеличить на 30px
     margin: 0 auto;
     padding: 0 15px;
 }
