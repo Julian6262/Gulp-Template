@@ -2,7 +2,7 @@ const {src, dest, watch, parallel} = require('gulp');
 const scss = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
-const uglify = require('gulp-uglify-es').default();
+const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
 const avif = require('gulp-avif');
@@ -35,13 +35,13 @@ function styles() {
 
 function scripts() {
     return src([
-        'node_modules/jquery/dist/jquery.js',
+        // 'node_modules/jquery/dist/jquery.js',
         // 'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
         // 'node_modules/swiper/swiper-bundle.js',
         'app/js/main.js'
     ])
         .pipe(concat('main.min.js'))
-        .pipe(uglify)
+        .pipe(uglify())
         .pipe(dest('app/js'))
         .pipe(browserSync.stream())
 }
@@ -101,9 +101,9 @@ function watching() {
     });
     watch(['app/scss/**/*.scss'], styles);
     watch(['app/img/src/*.*'], images);
-    watch(['app/img/fonts/*.*'], fonts);
+    watch(['app/fonts/src/*.*'], fonts);
     // watch(['app/components/*.*', 'app/pages/*.*'], pages);         //несколько страниц
-    watch(['app/*.html']).on('change', browserSync.reload);        //одна страниц
+    watch(['app/*.html']).on('change', browserSync.reload);
     watch(['app/js/**/*.js', '!app/js/**/main.min.js'], scripts);
 }
 
