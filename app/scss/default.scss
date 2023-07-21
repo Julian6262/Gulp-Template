@@ -1,0 +1,44 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html, body {
+    overflow-x: hidden
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: black;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1326px; //увеличить на 30px
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+//////////////////////////////////////////////////

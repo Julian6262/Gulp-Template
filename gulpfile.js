@@ -20,6 +20,7 @@ function styles() {
         // 'node_modules/magnific-popup/dist/magnific-popup.css',
         // 'node_modules/swiper/swiper-bundle.css',
         'app/scss/fonts.scss',
+        'app/scss/default.scss',
         'app/scss/style.scss',
         'app/scss/media.scss'
     ])
