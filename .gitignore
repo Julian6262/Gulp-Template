@@ -6,3 +6,5 @@ dist
 .cache
 .idea
 /.editorconfig
+app/img/src
+app/fonts/src
